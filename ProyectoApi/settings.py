@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 DEBUG = 'RENDER' not in os.environ
 
 
-ALLOWED_HOSTS = ['192.168.0.13','localhost','127.0.0.1']
+ALLOWED_HOSTS = []
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
@@ -84,26 +84,30 @@ TEMPLATES = [
 WSGI_APPLICATION = 'ProyectoApi.wsgi.application'
 
 
- #Database
- #https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+#Database
+# #https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='sqlite:///db.sqlite3',
-        conn_max_age=600)
+        default='postgresql://postgres::postgres@localhost:5432/bdticketbanco',
+        conn_max_age=600
+    )
 }
+
+
+
 #DATABASES = {
-#    'default': {
+#   'default': {
 #        'ENGINE': 'django.db.backends.mysql',
-#        'HOST': 'localhost',
-#        'PORT':'3306',
+ #       'HOST': 'localhost',
+ #       'PORT':'3306',
  #       'USER':'root',
  #       'PASSWORD':'Software123++',
- #       'NAME':'bdticketbanco',
-#        'OPTIONS':{
-#            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
-#        }
-#    }
+  #      'NAME':'bdticketbanco',
+ #       'OPTIONS':{
+  #          'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
+  #      }
+  #  }
 #}
 
 
