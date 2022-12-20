@@ -87,30 +87,30 @@ WSGI_APPLICATION = 'ProyectoApi.wsgi.application'
 #Database
 # #https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-#DATABASES = {
-#    'default': dj_database_url.config(
-#        default='postgresql://postgres::postgres@localhost:5432/bdticketbanco''USER':'bdticketbanco_user','PASSWORD':'K1aqEtktEXdjXbAYFzJITKvMt1Z8ZNEc',
-#        conn_max_age=600,
-#        
-#    )
-#}
-
-
-
-
 DATABASES = {
-   'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'dpg-cdr5ntpgp3jnj84k51e0-a',
-        'PORT':'5432',
-        'USER':'bdticketbanco_user',
-        'PASSWORD':'K1aqEtktEXdjXbAYFzJITKvMt1Z8ZNEc',
-        'NAME':'bdticketbanco',
-        'OPTIONS':{
-            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
-        }
-    }
+    'default': dj_database_url.config(
+        default='postgresql://postgres::postgres@localhost:5432/bdticketbanco',
+        conn_max_age=600,
+        
+    )
 }
+
+
+
+
+#DATABASES = {
+ #  'default': {
+  #      'ENGINE': 'django.db.backends.postgresql',
+   #     'HOST': 'dpg-cdr5ntpgp3jnj84k51e0-a',
+    #    'PORT':'5432',
+     #   'USER':'bdticketbanco_user',
+      #  'PASSWORD':'K1aqEtktEXdjXbAYFzJITKvMt1Z8ZNEc',
+       # 'NAME':'bdticketbanco',
+        #'OPTIONS':{
+         #   'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
+        #}
+    #}
+#}
 
 
 # Password validation
