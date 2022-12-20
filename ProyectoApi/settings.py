@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'ProyectoApi.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://postgres::postgres@localhost:5432/bdticketbanco',
+        default='postgresql://postgres::postgres@localhost:5432/mysite',#bdticketbanco
         conn_max_age=600,
         
     )
